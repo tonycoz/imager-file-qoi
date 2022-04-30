@@ -4,7 +4,7 @@ use Imager;
 use vars qw($VERSION @ISA);
 
 BEGIN {
-  $VERSION = "0.003";
+  $VERSION = "0.010";
 
   require XSLoader;
   XSLoader::load('Imager::File::QOI', $VERSION);
@@ -87,16 +87,14 @@ __END__
 
 =head1 NAME
 
-Imager::File::QOI - read and write QOI files
+Imager::File::QOI - read and write QOI image files
 
 =head1 SYNOPSIS
 
   use Imager;
-  # you need to explicitly load it, or supply a type => "qoi" parameter
-  use Imager::File::QOI;
 
   my $img = Imager->new;
-  $img->read(file=>"foo.qoi")
+  $img->read(file => "foo.qoi")
     or die $img->errstr;
 
   $img->write(file => "foo.qoi", type => "qoi")
@@ -104,7 +102,7 @@ Imager::File::QOI - read and write QOI files
 
 =head1 DESCRIPTION
 
-Implements .qoi file support for Imager.
+Implements QOI file support for Imager.
 
 =head1 LIMITATIONS
 
@@ -126,8 +124,11 @@ QOI header when reading.
 
 =head1 BUGS
 
-The bundled reference decoder doesn't fail on truncated files.  See
+The bundled reference decoder doesn't fail on truncated files.
 https://github.com/phoboslab/qoi/issues/98
+
+The bundled reference decoder doesn't validate the end of file marker.
+https://github.com/phoboslab/qoi/issues/96
 
 =head1 AUTHOR
 
@@ -135,6 +136,8 @@ Tony Cook <tonyc@cpan.org>
 
 =head1 SEE ALSO
 
-Imager, Imager::Files.
+L<Imager>, <Imager::Files>.
+
+L<https://qoiformat.org/>
 
 =cut

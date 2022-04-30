@@ -10,5 +10,5 @@ QOI.xs
 t/10-image.t
 t/20-test-images.t
 t/30-errors.t
-t/90pod.t
+t/90-pod.t
 t/91-meta.t
