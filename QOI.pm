@@ -130,6 +130,10 @@ https://github.com/phoboslab/qoi/issues/98
 The bundled reference decoder doesn't validate the end of file marker.
 https://github.com/phoboslab/qoi/issues/96
 
+=head1 LICENSE
+
+Imager::File::QOI is licensed under the same terms as Perl itself.
+
 =head1 AUTHOR
 
 Tony Cook <tonyc@cpan.org>
